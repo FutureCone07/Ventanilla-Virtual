@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUAC</title>
+  <style>
+    /* Fondo general */
+body {
+  background-image: url('movimi.png');
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-size: 100px 50px; /* Ancho x Alto */
+  
+
+}
+
+/* Contenedor principal */
+main {
+  margin: 5% auto;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+/* Centrado del contenido */
+.centrado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+/* Estilo del mapa embebido */
+#embed-map-canvas {
+  height: 300px;
+  width: 100%;
+  max-width: 700px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(51, 51, 51, 0.3);
+  margin: 0 auto;
+}
+
+/* Estilo adicional para iframe u objetos */
+.mapa {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.SUAC {
+
+  margin: 5% auto;
+  max-width: 900px;
+  background-color: rgba(255, 255, 255, 0.897);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+
+
+
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="SUAC">
+    <h2>Sistema Unificado de Atención Ciudadana</h2>
+    <label id="frmHomeTramite:j_idt83" class="ui-outputlabel ui-widget adip-output-contenido" style="word-break: break-word !important;">El Sistema Unificado de Atención Ciudadana (SUAC) es la plataforma única de atención ciudadana creada por la Agencia Digital de Innovación Pública (ADIP) en la que la ciudadanía puede presentar por distintos medios (por ejemplo, el servicio LOCATEL, los módulos de atención ciudadana, redes sociales, ventanillas presenciales, por medio de la aplicación Alameda Central, etcétera) las 24 horas de los 365 días del año, las solicitudes de información, dudas, sugerencias, comentarios, requerimientos, quejas y avisos para las autoridades del Gobierno de la Ciudad.
+      El SUAC representa una oportunidad de brindar a la ciudadanía una mejor atención a sus solicitudes transparentando el proceso de estas, desde que son recibidas hasta que concluyen con una respuesta.
+      El Sistema Unificado de Atención ciudadana, funciona mediante la comunicación electrónica entre los diferentes usuarios, y se coordina en su totalidad mediante un folio de atención, que permite dar el seguimiento a la atención y canalización de demandas de servicios, solicitudes de información, quejas, denuncias, información de trámites o asesorías entre los Órganos de la Administración Pública de la Ciudad de México, con el fin de agilizar los tiempos de atención respuesta y solución a las demandas de los ciudadanos.</label>
+    El Sistema Unificado de Atención Ciudadana (SUAC) es la plataforma única de atención ciudadana creada por la Agencia Digital de Innovación Pública (ADIP) en la que la ciudadanía puede presentar por distintos medios (por ejemplo, el servicio LOCATEL, los módulos de atención ciudadana, redes sociales, ventanillas presenciales, por medio de la aplicación Alameda Central, etcétera) las 24 horas de los 365 días del año, las solicitudes de información, dudas, sugerencias, comentarios, requerimientos, quejas y avisos para las autoridades del Gobierno de la Ciudad. El SUAC representa una oportunidad de brindar a la ciudadanía una mejor atención a sus solicitudes transparentando el proceso de estas, desde que son recibidas hasta que concluyen con una respuesta. El Sistema Unificado de Atención ciudadana, funciona mediante la comunicación electrónica entre los diferentes usuarios, y se coordina en su totalidad mediante un folio de atención, que permite dar el seguimiento a la atención y canalización de demandas de servicios, solicitudes de información, quejas, denuncias, información de trámites o asesorías entre los Órganos de la Administración Pública de la Ciudad de México, con el fin de agilizar los tiempos de atención respuesta y solución a las demandas de los ciudadanos.
+  </div>
+
+  <main>
+    <div class="centrado">
+      <fieldset style="padding: 10px;">
+        <legend>Descripción</legend>
+        <textarea id="descripcion" name="descripcion" rows="15" cols="50"></textarea>
+      </fieldset>
+    </div>
+
+    <h2>Haz clic en el mapa para seleccionar una ubicación:</h2>
+
+
+    <div id="embed-map-canvas">
+      <iframe class="mapa" frameborder="0"
+        src="https://www.google.com/maps/embed/v1/place?q=tultitlan&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+      <a class="googl-ehtml" href="https://www.bootstrapskins.com/themes" id="enable-map-data">
+      </a>
+    </div>
+
+    <div class="centrado">
+      <fieldset style="padding: 10px;">
+        <legend>Calle</legend>
+        <input id="calle" name="calle" rows="2" cols="100"></input>
+      </fieldset>
+    </div>
+
+    <div class="centrado">
+      <fieldset style="padding: 10px;">
+        <legend>No.Exterior</legend>
+        <input id="noExterior" name="noExterior"></input>
+      </fieldset>
+      <fieldset style="padding: 10px;">
+        <legend>No.Interior</legend>
+        <input id="noInterior" name="noInterior" rows="2" cols="46"></input>
+      </fieldset>
+    </div>
+
+    <div class="centrado">
+      <fieldset style="padding: 10px;">
+        <legend>Código Postal</legend>
+        <input id="calle" name="calle" rows="2" cols="100"></input>
+      </fieldset>
+    </div>
+
+    <div class="centrado">
+      <fieldset style="padding: 10px;">
+        <legend>Alcaldía</legend>
+        <input id="alcaldia" name="alcaldia" rows="2" cols="100"></input>
+      </fieldset>
+    </div>
+
+    <div class="centrado">
+      <fieldset style="padding: 10px;">
+        <legend>Colonia</legend>
+        <input id="colonia" name="colonia" rows="2" cols="100"></input>
+      </fieldset>
+    </div>
+
+    <div class="centrado">
+      <fieldset style="padding: 10px;">
+        <legend>Entre calle</legend>
+        <input id="entreCalle" name="entreCalle" rows="2" cols="100"></input>
+      </fieldset>
+    </div>
+
+    <div class="centrado">
+      <fieldset style="padding: 10px;">
+        <legend>Y calle</legend>
+        <input id="yCalle" name="yCalle" rows="2" cols="100"></input>
+      </fieldset>
+    </div>
+
+  </main>
+
+
+
+
+</body>
+
+</html>
