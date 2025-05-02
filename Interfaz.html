@@ -7,83 +7,189 @@
   <title>SUAC</title>
   <style>
     /* Fondo general */
-body {
-  background-image: url('movimi.png');
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-size: 100px 50px; /* Ancho x Alto */
-  
+    body {
+      background-image: url('logo\ cetis\ 2.png');
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-size: 100px 50px;
+      
 
-}
+    }
 
-/* Contenedor principal */
-main {
-  margin: 5% auto;
-  max-width: 900px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-}
+    header {
+      background-color: rgba(248, 248, 248, 0.98);
+      padding: 10px;
+      text-align: left;
+      display: flex;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+      
+      
+    }
 
-/* Centrado del contenido */
-.centrado {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-}
+    header img {
+      height: 80px;
+      /*ajustar el tamaño de la imagen*/
+    }
 
-/* Estilo del mapa embebido */
-#embed-map-canvas {
-  height: 300px;
-  width: 100%;
-  max-width: 700px;
-  border: 2px solid #333;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(51, 51, 51, 0.3);
-  margin: 0 auto;
-}
+    header h1 {
 
-/* Estilo adicional para iframe u objetos */
-.mapa {
-  height: 100%;
-  width: 100%;
-  border: 0;
-  border-radius: 10px;
-  margin: 0 auto;
-}
-.SUAC {
+      text-align: center;
+      color: #cfa454;
 
-  margin: 5% auto;
-  max-width: 900px;
-  background-color: rgba(255, 255, 255, 0.897);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  padding: 20px;
+    }
+
+    /* Contenedor principal */
+    main {
+      margin: 5% auto;
+      max-width: 900px;
+      background-color:rgba(247, 247, 247, 0.92); 
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      font-size: 28px;
+      
+    }
+
+    .boton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .btn-estilizado {
+      background-color: #007BFF;
+      /* Azul moderno */
+      color: white;
+      /* Texto blanco */
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn-estilizado:hover {
+      background-color: #0056b3;
+      /* Azul más oscuro */
+      transform: translateY(-2px);
+    }
+    input{
+      padding: 20px 2px;
+      border: none;
+      border-bottom: 2px solid black;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      font-size: 22px;
+
+    }
+
+    /* Centrado del contenido */
+    .centrado {
+      
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      text-align: left;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.0s ease-out, transform 2.6s ease-out;
+
+
+    }
+
+    .centrado.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Estilo del mapa embebido */
+    #embed-map-canvas {
+      height: 300px;
+      width: 100%;
+      max-width: 700px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(51, 51, 51, 0.3);
+      margin: 0 auto;
+    }
+
+    /* Estilo adicional para iframe u objetos */
+    .mapa {
+      height: 100%;
+      width: 100%;
+      border: 0;
+      border-radius: 10px;
+      margin: 0 auto;
+    }
+
+    .SUAC {
+
+      margin: 5% auto;
+      max-width: 900px;
+      background-color: rgba(247, 247, 247, 0.92);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      font-size: 20px;
 
 
 
-}
-
+    }
   </style>
 </head>
 
 <body>
-  <div class="SUAC">
-    <h2>Sistema Unificado de Atención Ciudadana</h2>
-    <label id="frmHomeTramite:j_idt83" class="ui-outputlabel ui-widget adip-output-contenido" style="word-break: break-word !important;">El Sistema Unificado de Atención Ciudadana (SUAC) es la plataforma única de atención ciudadana creada por la Agencia Digital de Innovación Pública (ADIP) en la que la ciudadanía puede presentar por distintos medios (por ejemplo, el servicio LOCATEL, los módulos de atención ciudadana, redes sociales, ventanillas presenciales, por medio de la aplicación Alameda Central, etcétera) las 24 horas de los 365 días del año, las solicitudes de información, dudas, sugerencias, comentarios, requerimientos, quejas y avisos para las autoridades del Gobierno de la Ciudad.
-      El SUAC representa una oportunidad de brindar a la ciudadanía una mejor atención a sus solicitudes transparentando el proceso de estas, desde que son recibidas hasta que concluyen con una respuesta.
-      El Sistema Unificado de Atención ciudadana, funciona mediante la comunicación electrónica entre los diferentes usuarios, y se coordina en su totalidad mediante un folio de atención, que permite dar el seguimiento a la atención y canalización de demandas de servicios, solicitudes de información, quejas, denuncias, información de trámites o asesorías entre los Órganos de la Administración Pública de la Ciudad de México, con el fin de agilizar los tiempos de atención respuesta y solución a las demandas de los ciudadanos.</label>
-    El Sistema Unificado de Atención Ciudadana (SUAC) es la plataforma única de atención ciudadana creada por la Agencia Digital de Innovación Pública (ADIP) en la que la ciudadanía puede presentar por distintos medios (por ejemplo, el servicio LOCATEL, los módulos de atención ciudadana, redes sociales, ventanillas presenciales, por medio de la aplicación Alameda Central, etcétera) las 24 horas de los 365 días del año, las solicitudes de información, dudas, sugerencias, comentarios, requerimientos, quejas y avisos para las autoridades del Gobierno de la Ciudad. El SUAC representa una oportunidad de brindar a la ciudadanía una mejor atención a sus solicitudes transparentando el proceso de estas, desde que son recibidas hasta que concluyen con una respuesta. El Sistema Unificado de Atención ciudadana, funciona mediante la comunicación electrónica entre los diferentes usuarios, y se coordina en su totalidad mediante un folio de atención, que permite dar el seguimiento a la atención y canalización de demandas de servicios, solicitudes de información, quejas, denuncias, información de trámites o asesorías entre los Órganos de la Administración Pública de la Ciudad de México, con el fin de agilizar los tiempos de atención respuesta y solución a las demandas de los ciudadanos.
+  <header>
+    <img src="cetis logo.png" alt="imagen logo cetis 3">
+    <h1>CETIS No. 03 - "Juana Belén Gutiérrez de Mendoza"</h1>
+
+  </header>
+
+
+  <div class="SUAC fade-in">
+    <h2>Ventanilla Virtual</h2>
+    <label id="frmHomeTramite:j_idt83" class="ui-outputlabel ui-widget adip-output-contenido"
+      style="word-break: break-word !important;"> Plataforma única de atención ciudadana creada por Cetis 3 en la que la
+      ciudadanía puede presentar
+      las 24 horas de los 365 días del año, las solicitudes de información, dudas, sugerencias, comentarios,
+      requerimientos, quejas y avisos para las autoridades del Gobierno de la Ciudad.
+      La ventanilla virtual representa una oportunidad de brindar a la ciudadanía una mejor atención a sus solicitudes
+      transparentando el proceso de estas, desde que son recibidas hasta que concluyen con una respuesta.
   </div>
 
   <main>
+    <h2>Información para contactar: </h2>
+    <div class="centrado">
+      <fieldset style="padding: 10px;">
+        <legend>Nombre completo</legend>
+        <input id="nombre" name="nombre"  placeholder="Escribe tu nombre completo" style="width: 100%;"></input>
+      </fieldset>
+    </div>
+
+    <div class="centrado">
+      <fieldset style="padding: 10px;">
+        <legend>Numero celular</legend>
+        <input id="numeroCelular" name="numeroCelular" placeholder="Escribe tu número de celular"style="width: 100%;"  type="number"></input>
+      </fieldset>
+    </div>
+
+    <div class="centrado">
+      <fieldset style="padding: 10px;">
+        <legend>Correo</legend>
+        <input id="correo" name="correo" placeholder="Escribe tu correo electronico"style="width: 100%;"></input>
+      </fieldset>
+    </div>
+
+    <h2>Escribenos tu reporte:</h2>
+
     <div class="centrado">
       <fieldset style="padding: 10px;">
         <legend>Descripción</legend>
-        <textarea id="descripcion" name="descripcion" rows="15" cols="50"></textarea>
+        <textarea id="descripcion" name="descripcion" placeholder="Escribe acerca de tu reporte"style="width: 100%; padding: 20px 2px; font-size: 20px"></textarea>
       </fieldset>
     </div>
 
@@ -92,7 +198,7 @@ main {
 
     <div id="embed-map-canvas">
       <iframe class="mapa" frameborder="0"
-        src="https://www.google.com/maps/embed/v1/place?q=tultitlan&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+        src="https://www.google.com/maps/embed/v1/place?q=ciudad+de+mexico&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
       <a class="googl-ehtml" href="https://www.bootstrapskins.com/themes" id="enable-map-data">
       </a>
     </div>
@@ -100,58 +206,77 @@ main {
     <div class="centrado">
       <fieldset style="padding: 10px;">
         <legend>Calle</legend>
-        <input id="calle" name="calle" rows="2" cols="100"></input>
+        <input id="calle" name="calle" placeholder="Escribe el nombre de la calle donde existe el problema"style="width: 100%;"></input>
       </fieldset>
     </div>
 
-    <div class="centrado">
-      <fieldset style="padding: 10px;">
-        <legend>No.Exterior</legend>
-        <input id="noExterior" name="noExterior"></input>
-      </fieldset>
-      <fieldset style="padding: 10px;">
-        <legend>No.Interior</legend>
-        <input id="noInterior" name="noInterior" rows="2" cols="46"></input>
-      </fieldset>
-    </div>
-
-    <div class="centrado">
+    <div class="centrado" id="cp">
       <fieldset style="padding: 10px;">
         <legend>Código Postal</legend>
-        <input id="calle" name="calle" rows="2" cols="100"></input>
+        <input id="calle" name="calle" placeholder="Escribe el código postal donde se encuentra el problema" style="width: 100%;"></input>
       </fieldset>
     </div>
 
     <div class="centrado">
       <fieldset style="padding: 10px;">
         <legend>Alcaldía</legend>
-        <input id="alcaldia" name="alcaldia" rows="2" cols="100"></input>
+        <input id="alcaldia" name="alcaldia" placeholder="Escribe el nombre de la Alcaldía donde se encuentra el problema" style="width: 100%;"></input>
       </fieldset>
     </div>
 
     <div class="centrado">
       <fieldset style="padding: 10px;">
         <legend>Colonia</legend>
-        <input id="colonia" name="colonia" rows="2" cols="100"></input>
+        <input id="colonia" name="colonia" placeholder="Escribe el nombre de la colonía donde existe el problema"style="width: 100%;"></input>
       </fieldset>
     </div>
 
     <div class="centrado">
       <fieldset style="padding: 10px;">
         <legend>Entre calle</legend>
-        <input id="entreCalle" name="entreCalle" rows="2" cols="100"></input>
+        <input id="entreCalle" name="entreCalle" placeholder="Escribe entre que calle se encuentra" style="width: 100%;"></input>
       </fieldset>
     </div>
 
     <div class="centrado">
       <fieldset style="padding: 10px;">
         <legend>Y calle</legend>
-        <input id="yCalle" name="yCalle" rows="2" cols="100"></input>
+        <input id="yCalle" name="yCalle" placeholder="Escribe entre que calle se encuentra"style="width: 100%;"></input>
       </fieldset>
+    </div>
+
+    <div class="boton">
+      <button class="btn-estilizado" onclick="mostrarMensaje()">Enviar</button>
+    </div>
+
+    <!-- Contenedor del mensaje -->
+    <div id="mensaje" style="display: none; text-align: center; color: green; font-weight: bold; margin-top: 10px;">
+      Reporte realizado
     </div>
 
   </main>
 
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.centrado').forEach(el => observer.observe(el));
+
+    function mostrarMensaje() {
+      const mensaje = document.getElementById("mensaje");
+      mensaje.style.display = "block";
+
+      // Opcional: Ocultar el mensaje después de unos segundos
+      setTimeout(() => {
+        mensaje.style.display = "none";
+      }, 3000); // 3000 ms = 3 segundos
+    }
+  </script>
 
 
 
