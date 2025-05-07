@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SUAC</title>
+  <script src="main.js"></script>
   <style>
     /* Fondo general */
     body {
@@ -162,6 +163,7 @@
   </div>
 
   <main>
+    <form id="#formulario">
     <h2>Información para contactar: </h2>
     <div class="centrado">
       <fieldset style="padding: 10px;">
@@ -213,7 +215,7 @@
     <div class="centrado" id="cp">
       <fieldset style="padding: 10px;">
         <legend>Código Postal</legend>
-        <input id="calle" name="calle" placeholder="Escribe el código postal donde se encuentra el problema" style="width: 100%;"></input>
+        <input id="codigoPostal" name="codigoPostal" placeholder="Escribe el código postal donde se encuentra el problema" style="width: 100%;"></input>
       </fieldset>
     </div>
 
@@ -231,19 +233,7 @@
       </fieldset>
     </div>
 
-    <div class="centrado">
-      <fieldset style="padding: 10px;">
-        <legend>Entre calle</legend>
-        <input id="entreCalle" name="entreCalle" placeholder="Escribe entre que calle se encuentra" style="width: 100%;"></input>
-      </fieldset>
-    </div>
-
-    <div class="centrado">
-      <fieldset style="padding: 10px;">
-        <legend>Y calle</legend>
-        <input id="yCalle" name="yCalle" placeholder="Escribe entre que calle se encuentra"style="width: 100%;"></input>
-      </fieldset>
-    </div>
+  </form>
 
     <div class="boton">
       <button class="btn-estilizado" onclick="mostrarMensaje()">Enviar</button>
@@ -266,16 +256,41 @@
     });
 
     document.querySelectorAll('.centrado').forEach(el => observer.observe(el));
-
-    function mostrarMensaje() {
-      const mensaje = document.getElementById("mensaje");
+    
+  function mostrarMensaje() {
+    const mensaje = document.getElementById("mensaje");
       mensaje.style.display = "block";
 
       // Opcional: Ocultar el mensaje después de unos segundos
       setTimeout(() => {
         mensaje.style.display = "none";
       }, 3000); // 3000 ms = 3 segundos
-    }
+    // Capturar los datos del formulario
+    const datos = { 
+      nombre: document.getElementById("nombre").value,
+      numeroCelular: document.getElementById("numeroCelular").value,
+      correo: document.getElementById("correo").value,
+      descripcion: document.getElementById("descripcion").value,
+      calle: document.getElementById("calle").value,
+      codigoPostal: document.getElementById('codigoPostal').value,
+      alcaldia: document.getElementById("alcaldia").value,  
+      colonia: document.getElementById("colonia").value,
+      
+      
+    };
+    
+
+    // Convertir a formato JSON legible
+    const jsonResultado = JSON.stringify(datos, null, 2); // null, 2 → formato bonito
+
+    // Mostrar en consola
+    console.log("Datos en formato JSON:\n", jsonResultado);
+
+    setTimeout(() => {
+      mensaje.style.display = "none";
+    }, 8000); 
+  }
+
   </script>
 
 
